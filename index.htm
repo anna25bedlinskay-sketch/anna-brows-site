@@ -14,16 +14,19 @@
         padding: 0;
     }
     .container {
-        max-width: 1000px; /* УСТАНОВЛЕНО 1000px для максимальной ширины! */
+        max-width: 1000px;
         margin: 20px auto;
         background-color: #fff;
         padding: 0;
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
         border-radius: 8px;
     }
-    header {
-        text-align: center;
-        padding: 20px;
+    /* Заголовок контейнера, де знаходиться ім'я */
+    .header-content { 
+        background-color: #f0e6ff; 
+        padding: 20px; 
+        text-align: center; 
+        border-radius: 8px 8px 0 0;
     }
     h1 {
         color: #6a0dad;
@@ -43,13 +46,20 @@
     section {
         padding: 20px;
     }
-    /* Стили для навигации */
+    /* Стили для навигации (МЕНЮ) */
+    nav {
+        text-align: center;
+        padding: 10px 0; /* Небольшие отступы для меню */
+        background-color: #fff; /* Фон меню */
+        border-bottom: 1px solid #eee;
+    }
     nav ul {
         list-style: none;
         padding: 0;
-        margin: 15px 0 0 0; 
+        margin: 0; 
         display: flex;
-        justify-content: space-around;
+        justify-content: center; /* Центрируем элементы меню */
+        flex-wrap: wrap; /* Для мобильных устройств */
     }
     nav ul li a {
         color: #6a0dad; 
@@ -58,6 +68,7 @@
         padding: 8px 12px;
         border-radius: 5px;
         transition: background-color 0.3s;
+        display: block; /* Чтобы кликабельной была вся область */
     }
     nav ul li a:hover {
         background-color: #e0b0ff;
@@ -111,10 +122,9 @@
 </style>
 </head>
 <body>
-
 <div class="container">
     
-    <div style="background-color: #f0e6ff; padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
+    <div class="header-content">
         <h1>Анна Бедлінська</h1>
         <p>Майстер-бровіст та ламімейкер в Одесі</p>
         
@@ -123,17 +133,16 @@
                 <li><a href="#about">Про мене</a></li>
                 <li><a href="#services">Послуги та Ціни</a></li>
                 <li><a href="#portfolio">Портфоліо</a></li>
-                <li><a href="#contact">Контакти</a></li>
+                <li><a href="#schedule">Графік роботи</a></li> <li><a href="#contact">Контакти</a></li>
             </ul>
         </nav>
         <div style="margin-top: 20px;">
-            <h2 style="color: #6a0dad;">Ідеальні Брови та Вії в Одесі, що економлять ваш час</h2>
-            <p>Сертифікований майстер. Гарантія якості та безпеки матеріалів.</p>
+            <h2 style="color: #6a0dad; border-bottom: none; padding-bottom: 0; margin-bottom: 0;">Ідеальні Брови та Вії в Одесі, що економлять ваш час</h2>
+<p>Сертифікований майстер. Гарантія якості та безпеки матеріалів.</p>
         </div>
     </div>
-    <div style="height: 40px;"></div>
     
-    <div style="background: linear-gradient(to bottom, #fde9f2, #e0b0ff); border-radius: 8px 8px 0 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <div style="background: linear-gradient(to bottom, #fde9f2, #e0b0ff); border-radius: 0 0 8px 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
 <section id="about">
             <h2>Про мене</h2>
             <div style="text-align: center;">
@@ -154,7 +163,7 @@
             <h3 style="text-align: center; border-bottom: 2px dashed #e0b0ff; padding-bottom: 5px;">BROWS (Брови)</h3>
             <div class="price-list">
                 <div class="price-item"><span>Корекція брів (віск + пінцет)</span> <span>200 ₴</span></div>
-                <div class="price-item"><span>Фарбування брів</span> <span>300 ₴</span></div>
+                <div class="price-item"><span>Фарбування брів</span> <span>200 ₴</span></div>
                 <div class="price-item"><span>Фарбування + корекція</span> <span>300 ₴</span></div>
                 <div class="price-item"><span>Освітлення брів</span> <span>200 ₴</span></div>
                 <div class="price-item"><span>Освітлення + фарбування</span> <span>300 ₴</span></div>
@@ -176,8 +185,7 @@
             <div class="price-list">
                 <div class="price-item"><span>Ламінування вій + ламінування брів + фарбування + корекція</span> <span>1000 ₴</span></div>
             </div>
-
-            <h3 style="text-align: center; border-bottom: 2px dashed #e0b0ff; padding-bottom: 5px;">ДОДАТКОВІ ПОСЛУГИ</h3>
+<h3 style="text-align: center; border-bottom: 2px dashed #e0b0ff; padding-bottom: 5px;">ДОДАТКОВІ ПОСЛУГИ</h3>
             <div class="price-list">
                 <div class="price-item"><span>Ваксинг 1 зони обличчя</span> <span>100 ₴</span></div>
                 <div class="price-item"><span>Інтенсивне відновлення вій/брів</span> <span>від 200 ₴</span></div>
@@ -186,9 +194,10 @@
         </section>
         
     </div>
-    <div style="background-color: #fceaff; padding-top: 20px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;">
+    
+    <div style="background-color: #fceaff; padding-top: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;">
 
-        <section id="portfolio">
+<section id="portfolio">
             <h2>Портфоліо</h2>
             
             <h3 style="text-align: center; color: #6a0dad; margin-top: 20px; border-bottom: 2px dashed #e0b0ff; padding-bottom: 5px;">РОБОТИ З БРОВАМИ</h3>
@@ -219,11 +228,24 @@
                     БІЛЬШЕ РОБІТ В INSTAGRAM
                 </a>
             </p>
-
-            <div style="height: 20px;"></div>
+<div style="height: 20px;"></div>
         </section>
+
+        <section id="schedule" style="padding: 20px; background-color: #f8f8f8; text-align: center;">
+            <h2>📅 Графік роботи (Прийом клієнтів)</h2>
+            <ul style="list-style: none; padding: 0; font-size: 1.2em; margin-top: 10px;">
+                <li style="margin: 5px 0;">Понеділок - Субота: 10:00 - 18:00</li>
+<li style="margin: 5px 0; color: #cc0000;">Неділя: Вихідний</li>
+            </ul>
+            <p style="font-weight: bold; margin-top: 15px;">
+                З радістю відповім на Ваші запитання! <br>
+                Для запису: оберіть послугу та напишіть мені у зручний месенджер!
+            </p>
+        </section>
+        
     </div>
-    <section id="contact" style="background-color: #f0e6ff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+
+    <section id="contact" style="background-color: #f0e6ff; padding: 25px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
         <h2>Контакти</h2>
         
         <h3 style="color: #6a0dad; margin-bottom: 20px;">Майстер Анна Бедлінська</h3>
